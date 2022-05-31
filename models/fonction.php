@@ -118,7 +118,7 @@ function ajout_image($bdd)
         if ($_POST['validation']) {
             $nom = $_POST['nom'];
             //création de la variable du dossier ou l'image sera enregistré
-            $uploads_dir = '../image';
+            $uploads_dir = '../images';
 
             //Récupération du nom de l'image
             $name = $_FILES["image"]["name"];

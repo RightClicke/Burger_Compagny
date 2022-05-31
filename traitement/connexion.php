@@ -14,8 +14,6 @@
     connexion($bdd);
 ?>
 
-
-
 <main id="mainConnex">
 <form class="connexionForm" method="POST" action="#">
     <input type="text" name="email" placeholder="Email" required>
