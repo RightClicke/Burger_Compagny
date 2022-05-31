@@ -1,0 +1,15 @@
+Burger Company
+Vend des produit de consommation
+commande en click & collect uniquement
+Pas de connexion pour voir les produits et les ajouter au panier
+connexion pour commander
+aspect graphique pas d'idée sa finira pas beau theme burger fast food founir photo libre de droit
+admin dashboard
+voi/ajouter/modifier (dispo ou indispo avce possibiliter de cacher les produits a l'utilisateur)/supprimer les produits et categories
+recevoir les commande les passer en preparation les valider quand elle sont terminer (gerer les commande clients)
+vue chiffre d'affaire mensuel / panier moyen/ le produit le plus vendu
+possibilité d'acceder a l'historique des commandes
+generer des facture en pdf
+gerer les ingredients avec possibiliter de rupture
+adresse avec petite carte resto contact reseau
+architecture mvc
