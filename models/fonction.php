@@ -144,7 +144,6 @@ function ajout_image($bdd)
             //mettre le chemin de l'image dans variable
             $lien = "$uploads_dir/$name";
             if (exif_imagetype($lien) == IMAGETYPE_JPEG) {
-                echo 'Cette image est  un JPEG';
                 //eviter qu'une photo en base de donné soit enregistrer a nouveaux
                 $userstr = 'SELECT * FROM img WHERE lien=:lien';
                 $userquery = $bdd->prepare($userstr);
@@ -152,9 +151,6 @@ function ajout_image($bdd)
                 $userquery->execute();
                 $bdduser = $userquery->fetch();
                 if ($bdduser == false) {
-
-                    echo $nom;
-                    echo $lien;
                     $queryprep = 'INSERT INTO img (ID_image,nom,lien) VALUES (null,:nom,:lien)';
                     $query = $bdd->prepare($queryprep);
                     $query->bindValue(':nom', $nom, PDO::PARAM_STR);
