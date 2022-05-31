@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * fonction servant a s'inscrire
+ *
+ * @param [PDO] $bdd
+ * @return void
+ */
 function inscription($bdd)
 {
     $ok = false;
@@ -72,6 +79,12 @@ function inscription($bdd)
         }
     }
 }
+/**
+ * sert a ce connecter
+ *
+ * @param [PDO] $bdd
+ * @return void
+ */
 function connexion($bdd)
 {
     if (isset($_POST['email'])) {
@@ -106,7 +119,12 @@ function connexion($bdd)
         }
     }
 }
-
+/**
+ * sert a ajouter des image a la base de données
+ *
+ * @param [pdo] $bdd
+ * @return void
+ */
 function ajout_image($bdd)
 {
 
@@ -153,5 +171,36 @@ function ajout_image($bdd)
                 }
             }
         }
+    }
+}
+/**
+ * sert a ajouter des ingredient avec leur image a la base de données
+ *
+ * @param [PDO] $bdd
+ * @return void
+ */
+function ajout_ingredient($bdd)
+{
+    if (isset($_POST['nom'])) {
+        ajout_image($bdd);
+        $nom = strip_tags($_POST['nom']);
+        $imgstr = 'SELECT * FROM img where nom=:nom';
+        $imgquery = $bdd->prepare($imgstr);
+        $imgquery->bindValue(':nom', $nom, PDO::PARAM_STR);
+        $imgquery->execute();
+        $bddimg = $imgquery->fetch();
+        $ID_img = $bddimg['ID_image'];
+        $nom = $_POST['nom'];
+        $dispo = false;
+        if (isset($_POST['dispo'])) {
+            $dispo = true;
+        }
+        $queryprep = 'INSERT INTO ingredient (ID_ingredient,ID_image,nom,dispo) VALUES 
+        (null,:ID_img,:nom,:dispo)';
+        $query = $bdd->prepare($queryprep);
+        $query->bindValue(':ID_img', $ID_img, PDO::PARAM_INT);
+        $query->bindValue(':nom', $nom, PDO::PARAM_STR);
+        $query->bindValue(':dispo', $dispo, PDO::PARAM_STR);
+        $query->execute();
     }
 }

@@ -27,7 +27,7 @@ include('../models/fonction.php');
                 include('../traitement/image.php');
                 break;
             case "2":
-                include('');
+                include('../traitement/ingredient.php');
                 break;
             case "3":
                 include('');
