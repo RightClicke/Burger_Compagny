@@ -36,7 +36,7 @@ include('../models/fonction.php');
                 include('../traitement/inscription.php');
                 break;
             case "5":
-                include('');
+                include('../traitement/categorie.php');
                 break;
             case "6":
                 include('');

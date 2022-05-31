@@ -212,3 +212,46 @@ function ajout_ingredient($bdd)
         }
     }
 }
+/**
+ * sert a ajouter des categorie
+ *
+ * @param [PDO] $bdd
+ * @return void
+ */
+function ajout_categorie($bdd)
+{
+    if (isset($_POST['nom'])) {
+
+        $catstr = 'SELECT * FROM categorie WHERE nom=:nom';
+        $catquery = $bdd->prepare($catstr);
+        $catquery->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
+        $catquery->execute();
+        $bddcat = $catquery->fetch();
+        if ($bddcat == false) {
+            ajout_image($bdd);
+            $nom = strip_tags($_POST['nom']);
+            $imgstr = 'SELECT * FROM img where nom=:nom';
+            $imgquery = $bdd->prepare($imgstr);
+            $imgquery->bindValue(':nom', $nom, PDO::PARAM_STR);
+            $imgquery->execute();
+            $bddimg = $imgquery->fetch();
+            $ID_img = $bddimg['ID_image'];
+            $nom = $_POST['nom'];
+            $dispo = false;
+            if (isset($_POST['dispo'])) {
+                $dispo = true;
+            }
+
+
+            $queryprep = 'INSERT INTO categorie (ID_categorie,ID_image,dispo,nom) VALUES 
+            (null,:ID_img,:dispo,:nom)';
+            $query = $bdd->prepare($queryprep);
+            $query->bindValue(':ID_img', $ID_img, PDO::PARAM_INT);
+            $query->bindValue(':nom', $nom, PDO::PARAM_STR);
+            $query->bindValue(':dispo', $dispo, PDO::PARAM_STR);
+            $query->execute();
+        } else {
+            echo 'cette categorie est deja enregister';
+        }
+    }
+}

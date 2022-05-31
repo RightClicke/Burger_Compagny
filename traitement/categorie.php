@@ -1,5 +1,8 @@
+<?php
+ajout_categorie($bdd);
+?>
 <form enctype="multipart/form-data" action="" method="post">
-    <label for="nom">Nom du produit : </label>
+    <label for="nom">Nom de la categorie : </label>
     <input type="text" name="nom" id="nom" /><br />
     <label for="image">Image : </label>
     <input type="file" name="image" id="image" /><br />
