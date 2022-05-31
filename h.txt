@@ -1,0 +1,129 @@
+ <div class="logo">
+            <img src="/images/Copie de black and white burger logo - Fait avec PosterMyWall (1).png" alt="">
+        </div>
+        <div class="menu_number">
+            <ul class="menu">
+                <li><a href="#">Acceuil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Notre Carte</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="number">
+                <p>1085 350 520</p>
+            </div>
+        </div>
+        <!-- responsive menu -->
+        <div class="menu_toggle"></div>
+    </header>
+
+
+    <header id="imgBack">
+        <img id="imgHead" src="./images/Copie de black and white burger logo - Fait avec PosterMyWall (1).png" alt="">
+        <div id="entete">
+            <nav id="liens_entete">
+                <a href="">Notre carte</a>
+                <a href="">Nous trouver</a>
+                <a href="">Nous contacter</a>
+            </nav>
+            <div id="logo">
+                <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
+                <a href="#"><i class="fa-brands fa-opencart"></i></a>
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                <button id="click"><a href="#" >Click and collect</a></button>
+            </div>
+        </div>
+        <input type="search" id="searchBar" style="color: black;"placeholder="Rechercher...">
+    </header>
+
+
+    /*Effet barre de recherche*/
+input{
+    display: none;
+    outline: none;
+    width: 50%;
+    font-size: 2rem;
+    border: none;
+    border-bottom: 2px solid red;
+    margin: auto;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.5s;
+}
+  
+  .sliderDown {
+    transform: translateY(0%);
+    opacity: 1;
+}
+  
+  #searchIcon {
+    cursor: pointer;
+    transition: all 0.5s;
+    
+}
+  
+  #searchIcon:hover {
+    color: #a73489;
+}
+  #logo i:hover {
+    color: #a73489;
+}
+#liens_entete a:hover {
+    color: #a73489;
+}
+
+
+#imgHead{
+  opacity: 70%;
+  width: 19%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  right: 42%;
+}
+#imgBack{
+    position: relative;
+    width: 100%;
+    height: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/burger-g0ff63f874_1920.jpg);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#entete{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100vw;
+    justify-content: space-between;
+    border: solid 1px pink;
+    /* padding: 1%; */
+    background-color: rgba(255, 192, 203, 0.795);
+    
+}
+#liens_entete a{
+    color: aliceblue;
+    text-decoration: none;
+    
+    /* padding: 20px; */
+    
+}
+#logo a{
+    /* padding: 23px; */
+    color: aliceblue;  
+}
+#logo i{
+    color: aliceblue;
+    font-size: 25px;
+}
+#click{
+  background-color: red;
+  border-radius: 5%;
+  height: 50px;
+}
+#click a{
+  text-decoration: none;
+  color: black;
+  
+}
