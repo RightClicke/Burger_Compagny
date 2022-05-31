@@ -127,3 +127,10 @@ input{
   color: black;
   
 }
+
+
+MAJ github
+
+git add . 
+git commit -m 'luffy'
+git push -u origin chris

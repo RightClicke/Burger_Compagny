@@ -1,0 +1,19 @@
+.inscriptionForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 3% auto;
+    border: solid 1px;
+    border-radius: 20px;
+    box-shadow: 50px -10px pink;
+    width: 40vw;
+    height: 99vh;
+
+}
+.inscriptionForm input, .inscriptionForm select{
+    margin: 2% auto;
+    text-align: center;
+    width: 20vw;
+    height: 5vh;
+}

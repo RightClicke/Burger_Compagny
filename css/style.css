@@ -48,6 +48,7 @@ i{
   background-color: rgba(255, 192, 203, 0.582);
   border-radius: 5%;
   height: 40px;
+  
 }
 .click a{
   text-decoration: none;
@@ -276,7 +277,7 @@ a img {
 .banner {
   text-align: center;
   margin: 50px 0;
-  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/img3.jpg);
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../images/img3.jpg);
   background-position: center;
   background-size: cover;
   padding: 100px;
@@ -364,6 +365,12 @@ footer {
   padding: 10px 0;
   text-align: center;
   font-size: 12px;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
 .menu_toggle  {
   display: none;
@@ -411,7 +418,7 @@ footer {
       position: relative;
       width: 100%;
       margin: 100px 0;
-      background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/img2.jpg);
+      background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/img2.jpg);
       background-position: center;
       background-size: cover;
       min-height: 70vh;
@@ -533,6 +540,44 @@ footer {
   }
 
 }
+/* Page Inscription/connexion */
+#inscripConnexForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  
+}
+.inscripConnex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px black;
+  width: 60%;
+  height: 60%;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  
+}
+.inscripConnex button{
+  margin: 2% auto;
+  width:30%;
+  height: 50px;
+}
+.inscripConnex a{
+  width:30%;
+  margin: 0% auto;
+  color: #000;
+  text-align: center; 
+  color: #fff;
+  font-size: 18px;
+}
+
+
 
 
 
