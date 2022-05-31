@@ -30,7 +30,7 @@ include('../models/fonction.php');
                 include('../traitement/ingredient.php');
                 break;
             case "3":
-                include('');
+                include('../traitement/produit.php');
                 break;
             case "4":
                 include('../traitement/inscription.php');
