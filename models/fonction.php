@@ -9,7 +9,7 @@
 function inscription($bdd)
 {
     $ok = false;
-
+    //on securise les données rentrer par l'utilisateur avec strip_tag pour eviter qu'il puisse rentrer du code
     if (isset($_POST['nom'])) {
         $mot_de_passe = $_POST['mdp'];
         $nom = strip_tags($_POST['nom']);
@@ -18,9 +18,9 @@ function inscription($bdd)
         $numero = $_POST['numero'];
         $adresse = strip_tags($_POST['adresse']);
         $ville = strip_tags($_POST['ville']);
-
+        //on verifie si les deux  mots de passe donné par l'utilisateur correspond 
         if ($_POST['mdp'] == $_POST['mdp2']) {
-
+            //si oui on verifie que l'email ne soit pas deja en base de donnée
             $userstr = 'SELECT * FROM user ';
             $userquery = $bdd->prepare($userstr);
             $userquery->execute();
@@ -30,11 +30,11 @@ function inscription($bdd)
                     $ok = true;
                 }
             }
-
+            //on hash le mots de passe avant de l'inserer en base de donnés
             $password = password_hash($mot_de_passe, PASSWORD_BCRYPT);
 
             if ($ok == false) {
-
+                //si l'email n'est pas deja dans la base de données on va recuperer l'id ville dans la table ville a l'aide de son nom
                 $selectstr = 'SELECT * FROM villes WHERE ville_nom=:ville';
                 $selectquery = $bdd->prepare($selectstr);
                 $selectquery->bindValue(':ville', $ville, PDO::PARAM_STR);
@@ -45,6 +45,7 @@ function inscription($bdd)
                 }
 
                 if (isset($ville_id)) {
+                    //une fois toute les données recuperer on les insert dans la table user
                     $queryprep = 'INSERT INTO user (ID_user,ID_ville,ID_role,nom,prenom,adresse,email,mdp,numero) VALUES 
                                                 (null,:ville,1,:nom,:prenom,:adresse,:email,:mdp,:numero)';
                     $query = $bdd->prepare($queryprep);
@@ -58,14 +59,6 @@ function inscription($bdd)
 
                     $query->execute();
                     echo ('ok');
-                    var_dump($nom);
-                    var_dump($prenom);
-                    var_dump($adresse);
-                    var_dump($email);
-                    var_dump($password);
-                    var_dump($numero);
-
-
 
                     // header('Location:index.php');
                 } else {
@@ -90,10 +83,10 @@ function connexion($bdd)
     if (isset($_POST['email'])) {
         $email = strip_tags($_POST['email']);
         $mdp = $_POST['mdp'];
+        //on securise les données rentrer par l'utilisateur avec strip_tag pour eviter qu'il puisse rentrer du code
 
 
-
-
+        //on recupere les données dans la table user pour ensuite verifier que les données rentrer par l'utilisateur correspond
         $userstr = 'SELECT * FROM user WHERE email=:email';
         $userquery = $bdd->prepare($userstr);
         $userquery->bindValue(':email', $email, PDO::PARAM_STR);
@@ -105,7 +98,7 @@ function connexion($bdd)
 
             $passwordHash = $bdduser['mdp'];
             $password = password_verify($mdp, $passwordHash);
-
+            // on utilise la variable SESSION pour passer les données entre les page et savoir qu'il s'est connecter
             if ($password == true) {
                 echo 'connecter';
                 $_SESSION['ID_role'] = $bdduser['ID_role'];
@@ -178,15 +171,17 @@ function ajout_image($bdd)
 function ajout_ingredient($bdd)
 {
     if (isset($_POST['nom'])) {
-
+        //recuperation de la table categorie pour verifier si la categorie n'existe pas deja
         $ingstr = 'SELECT * FROM ingredient WHERE nom=:nom';
         $ingquery = $bdd->prepare($ingstr);
         $ingquery->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
         $ingquery->execute();
         $bdding = $ingquery->fetch();
         if ($bdding == false) {
+            //preparation des donnée pour remplir la table categorie
             ajout_image($bdd);
             $nom = strip_tags($_POST['nom']);
+            // on recupere dans la table image l'id de l'image qui a le meme nom que la categorie
             $imgstr = 'SELECT * FROM img where nom=:nom';
             $imgquery = $bdd->prepare($imgstr);
             $imgquery->bindValue(':nom', $nom, PDO::PARAM_STR);
@@ -195,17 +190,18 @@ function ajout_ingredient($bdd)
             $ID_img = $bddimg['ID_image'];
             $nom = $_POST['nom'];
             $dispo = false;
+            //on verifie la disponibilité du produit
             if (isset($_POST['dispo'])) {
                 $dispo = true;
             }
 
-
+            // apres avoir recuperer tout les données necessaire on les insert dans la table ingredient
             $queryprep = 'INSERT INTO ingredient (ID_ingredient,ID_image,nom,dispo) VALUES 
             (null,:ID_img,:nom,:dispo)';
             $query = $bdd->prepare($queryprep);
             $query->bindValue(':ID_img', $ID_img, PDO::PARAM_INT);
             $query->bindValue(':nom', $nom, PDO::PARAM_STR);
-            $query->bindValue(':dispo', $dispo, PDO::PARAM_STR);
+            $query->bindValue(':dispo', $dispo, PDO::PARAM_BOOL);
             $query->execute();
         } else {
             echo 'cette ingredients est deja enregister';
@@ -221,15 +217,17 @@ function ajout_ingredient($bdd)
 function ajout_categorie($bdd)
 {
     if (isset($_POST['nom'])) {
-
+        //recuperation de la table categorie pour verifier si la categorie n'existe pas deja
         $catstr = 'SELECT * FROM categorie WHERE nom=:nom';
         $catquery = $bdd->prepare($catstr);
         $catquery->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
         $catquery->execute();
         $bddcat = $catquery->fetch();
         if ($bddcat == false) {
+            //preparation des donnée pour remplir la table categorie
             ajout_image($bdd);
             $nom = strip_tags($_POST['nom']);
+            // on recupere dans la table image l'id de l'image qui a le meme nom que la categorie
             $imgstr = 'SELECT * FROM img where nom=:nom';
             $imgquery = $bdd->prepare($imgstr);
             $imgquery->bindValue(':nom', $nom, PDO::PARAM_STR);
@@ -238,20 +236,97 @@ function ajout_categorie($bdd)
             $ID_img = $bddimg['ID_image'];
             $nom = $_POST['nom'];
             $dispo = false;
+            //on verifie la disponibilité du produit
             if (isset($_POST['dispo'])) {
                 $dispo = true;
             }
 
-
+            // apres avoir recuperer tout les données necessaire on les insert dans la table categorie
             $queryprep = 'INSERT INTO categorie (ID_categorie,ID_image,dispo,nom) VALUES 
             (null,:ID_img,:dispo,:nom)';
             $query = $bdd->prepare($queryprep);
             $query->bindValue(':ID_img', $ID_img, PDO::PARAM_INT);
             $query->bindValue(':nom', $nom, PDO::PARAM_STR);
-            $query->bindValue(':dispo', $dispo, PDO::PARAM_STR);
+            $query->bindValue(':dispo', $dispo, PDO::PARAM_BOOL);
             $query->execute();
         } else {
             echo 'cette categorie est deja enregister';
         }
     }
+}
+/**
+ * sert a ajouter des produit dans la bdd
+ *
+ * @param [PDO] $bdd
+ * @return void
+ */
+function ajout_produit($bdd)
+{
+    if (isset($_POST['nom'])) {
+        $nom = $_POST['nom'];
+        $prix = $_POST['prix'];
+        $descrip = $_POST['description'];
+        $cat = $_POST['cat'];
+
+        $catstr = 'SELECT * FROM produit WHERE nom=:nom';
+        $catquery = $bdd->prepare($catstr);
+        $catquery->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
+        $catquery->execute();
+        $bddcat = $catquery->fetch();
+        if ($bddcat == false) {
+            //preparation des donnée pour remplir la table categorie
+            ajout_image($bdd);
+            // on recupere dans la table image l'id de l'image qui a le meme nom que la categorie
+            $imgstr = 'SELECT * FROM img where nom=:nom';
+            $imgquery = $bdd->prepare($imgstr);
+            $imgquery->bindValue(':nom', $nom, PDO::PARAM_STR);
+            $imgquery->execute();
+            $bddimg = $imgquery->fetch();
+
+            if (isset($bddimg['ID_image'])) {
+                $ID_img = $bddimg['ID_image'];
+
+                $nom = $_POST['nom'];
+                $dispo = false;
+                //on verifie la disponibilité du produit
+                if (isset($_POST['dispo'])) {
+                    $dispo = true;
+                }
+                // apres avoir recuperer tout les données necessaire on les insert dans la table categorie
+                $produitprep = "INSERT INTO `produit` (`ID_produit`, `ID_categorie`, `ID_image`, `nom`, `prix`, `description`, `dispo`)
+             VALUES (NULL, :ID_cat, :ID_img, :nom, :prix, :descrip, :dispo)";
+                $prodquery = $bdd->prepare($produitprep);
+                $prodquery->bindValue(':ID_cat', $cat, PDO::PARAM_INT);
+                $prodquery->bindValue(':ID_img', $ID_img, PDO::PARAM_INT);
+                $prodquery->bindValue(':nom', $nom, PDO::PARAM_STR);
+                $prodquery->bindValue(':descrip', $descrip, PDO::PARAM_STR);
+                $prodquery->bindValue(':prix', $prix, PDO::PARAM_INT);
+                $prodquery->bindValue(':dispo', $dispo, PDO::PARAM_BOOL);
+                $prodquery->execute();
+            }
+        } else {
+            echo 'produit deja enregistrer';
+        }
+    }
+}
+/**
+ * menu deroulant des categorie categorie 
+ *
+ * @param [PDO] $bdd
+ * @return void
+ */
+function table_cat($bdd)
+{
+    $catstr = 'SELECT * FROM categorie ';
+    $catquery = $bdd->prepare($catstr);
+    $catquery->execute();
+    $bddcat = $catquery->fetchall();
+    echo "<select class='cat' name='cat'>";
+    echo '<option value="">' . "choisir une categorie" . '</option>';
+    foreach ($bddcat as $resultat) {
+
+        echo '<option value=' . $resultat['ID_categorie'] . '>' . $resultat['nom'] . '</option>';
+    }
+
+    echo '</select>';
 }
