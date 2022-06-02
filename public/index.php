@@ -1,41 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <script src="https://kit.fontawesome.com/fec8a6cc73.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/stylePr.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Burger Compagnie</title>
 </head>
-<header>
-    <div class="logo">
-            <h1>Burger<span>COMPAGNIE</span></h1>
-            </div>
-            <div class="menu_number">
-                <ul class="menu">
-                    <li><a href="#">Acceuil</a></li>
-                    <li><a href="#">A propos</a></li>
-                    <li><a href="#">Notre Carte</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
-                    <a href="index.php?page=inscripConnex"><i class="fa-solid fa-user"></i></a>
-                    
-                </ul>
-                <div class="clickAndCollect">
-                    <button class="click"><a href="#" >Click and collect</a></button>
-                    
-                </div>
-            </div>
-            <!-- responsive menu -->
-            <div class="menu_toggle"></div>
-            
-           
-    </header>
-    <input type="search" id="searchBar" style="color: black;"placeholder="Rechercher...">
+<nav>
+    <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page">
+        <h1>Burger<span>COMPAGNIE</span></h1>
+    </a>
 
+      <div class="main-navlinks">
+            <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navlinks-container">
+                <a href="#" aria-current="page">Accueil</a>
+                <a href="../traitement/carteMenu.php">Notre carte</a>
+                <a href="#">A propos</a>
+                <a href="#">Contact</a>
+            </div>
+      </div>
+
+      <div class="nav-authentication">
+        <a href="../traitement/inscripConnex.php" class="sign-user" aria-label="Sign in page">
+          <img src="../images/user.svg" alt="user-icon">
+        </a>
+        <div class="sign-btns">
+            <!-- JE DOIS AJOUTER L'ICONE pour la barre de recherche<i id="searchIcon"class="fa-solid fa-magnifying-glass"></i> -->
+            <button class="pinka"type="button"><a href="../traitement/connexion.php">Connexion</a></button>
+            <button type="button"><a href="../traitement/inscription.php">Inscription</a></button>
+        </div>
+      </div>
+      
+</nav>
 <script>
-    const searchIcon = document.getElementById("searchIcon");
+    const hamburgerToggler = document.querySelector(".hamburger")
+    const navLinksContainer = document.querySelector(".navlinks-container");
+
+    const toggleNav = () => {
+    hamburgerToggler.classList.toggle("open")
+
+    const ariaToggle = hamburgerToggler.getAttribute("aria-expanded") === "true" ?  "false" : "true";
+    hamburgerToggler.setAttribute("aria-expanded", ariaToggle)
+
+    navLinksContainer.classList.toggle("open")
+    }
+    hamburgerToggler.addEventListener("click", toggleNav)
+
+    new ResizeObserver(entries => {
+    if(entries[0].contentRect.width <= 900){
+        navLinksContainer.style.transition = "transform 0.3s ease-out"
+    } else {
+        navLinksContainer.style.transition = "none"
+    }
+}).observe(document.body)
+// barre de recherche 
+const searchIcon = document.getElementById("searchIcon");
     const searchBar  = document.getElementById("searchBar");
     /*Fait glisser la barre de recherche vers le bas*/
     searchIcon.onclick = () => {
@@ -58,8 +84,8 @@
         case 'accueil':
             include('../traitement/accueil.php');
             break;
-        case "inscripConnex":
-            include('../traitement/inscripConnex.php');
+        case "":
+            include('');
             break;
         case "":
             include('');
@@ -81,7 +107,7 @@
             break;
 
         default:
-            include('../accueil.php');
+            include('../traitement/accueil.php');
     }
 } else {
     include('../traitement/accueil.php');

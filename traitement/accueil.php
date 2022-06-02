@@ -1,4 +1,4 @@
-
+<input type="search" id="searchBar" style="color: black;"placeholder="Rechercher...">
 <section class="sect2">
         <div class="section2">
             <div class="gauche">
@@ -65,26 +65,26 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ipsam, sit ipsum autem, sunt harum explicabo a cupiditate praesentium iure sequi.</p>
             <p> Perferendis, voluptate impedit maiores natus consequuntur alias optio sit.</p>
         </div>
-         <div class="bottom">
+        <div class="bottom">
             <div class="box">
                 <img src="../images/burger-g41ca5520a_1920.jpg">
-                <h4>Vegétarien Salade Sandwish</h4>
+                <h4>French Salade Sandwish</h4>
                 <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-                <span>$20</span>
+                <span>€20</span>
                 <button><a href="#">Commander <img src="../images/cart.png"></a></button>
             </div>
             <div class="box">
                 <img src="../images/hamburger-ge507374ef_1920.jpg">
                 <h4>Vegétarien Salade Sandwish</h4>
                 <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-                <span>$30</span>
+                <span>€30</span>
                 <button><a href="#">Commander <img src="../images/cart.png"></a></button>
             </div>
             <div class="box">
                 <img src="../images/img3.jpg">
-                <h4>Vegétarien Salade Sandwish</h4>
+                <h4>Japanese Salade Sandwish</h4>
                 <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-                <span>$70</span>
+                <span>€70</span>
                 <button><a href="#">Commander <img src="../images/cart.png"></a></button>
             </div>
         </div>
