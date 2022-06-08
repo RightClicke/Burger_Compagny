@@ -28,13 +28,13 @@
       </div>
 
       <div class="nav-authentication">
-        <a href="../traitement/inscripConnex.php" class="sign-user" aria-label="Sign in page">
+        <a href="" class="sign-user" aria-label="Sign in page">
           <img src="../images/user.svg" alt="user-icon">
         </a>
         <div class="sign-btns">
             <!-- JE DOIS AJOUTER L'ICONE pour la barre de recherche<i id="searchIcon"class="fa-solid fa-magnifying-glass"></i> -->
-            <button class="pinka"type="button"><a href="../traitement/connexion.php">Connexion</a></button>
-            <button type="button"><a href="../traitement/inscription.php">Inscription</a></button>
+            <button class="pinka"type="button"><a href="index.php?page=connexion">Connexion</a></button>
+            <button type="button"><a href="index.php?page=inscription">Inscription</a></button>
         </div>
       </div>
       
@@ -61,19 +61,19 @@
     }
 }).observe(document.body)
 // barre de recherche 
-const searchIcon = document.getElementById("searchIcon");
-    const searchBar  = document.getElementById("searchBar");
-    /*Fait glisser la barre de recherche vers le bas*/
-    searchIcon.onclick = () => {
-    searchBar.style.display = "block";
-    setTimeout(() => searchBar.classList.add("sliderDown"), 0);
-    searchBar.focus();
-    };
-    /*Fait glisser la barre de recherche vers le haut*/
-    searchBar.onblur = () => {
-    searchBar.classList.remove("sliderDown");
-    setTimeout(() => (searchBar.style.display = "none"), 500);
-    };
+// const searchIcon = document.getElementById("searchIcon");
+//     const searchBar  = document.getElementById("searchBar");
+//     /*Fait glisser la barre de recherche vers le bas*/
+//     searchIcon.onclick = () => {
+//     searchBar.style.display = "block";
+//     setTimeout(() => searchBar.classList.add("sliderDown"), 0);
+//     searchBar.focus();
+//     };
+//     /*Fait glisser la barre de recherche vers le haut*/
+//     searchBar.onblur = () => {
+//     searchBar.classList.remove("sliderDown");
+//     setTimeout(() => (searchBar.style.display = "none"), 500);
+//     };
 </script>
 <body>
    <?php
@@ -84,11 +84,11 @@ const searchIcon = document.getElementById("searchIcon");
         case 'accueil':
             include('../traitement/accueil.php');
             break;
-        case "":
-            include('');
+        case 'connexion':
+            include('../traitement/connexion.php');
             break;
-        case "":
-            include('');
+        case "inscription":
+            include('../traitement/inscription.php');
             break;
         case "":
             include('');
@@ -149,5 +149,4 @@ const searchIcon = document.getElementById("searchIcon");
 
 
 
-</body>
 </html>

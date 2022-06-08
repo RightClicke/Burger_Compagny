@@ -453,3 +453,49 @@ input{
 }
 
 git checkout nom de la branche
+
+
+.connexionForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 2% auto;
+    border: solid 1px;
+    border-radius: 20px;
+    box-shadow: 50px -10px pink;
+    width: 30%;
+    height: 60vh;
+
+}
+.connexionForm input{
+    margin: 3% auto;
+    text-align: center;
+    width: 20vw;
+    height: 5vh;
+}
+.inscriptionForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 3% auto;
+    border: solid 1px;
+    border-radius: 20px;
+    box-shadow: 50px -10px pink;
+    width: 40vw;
+    height: 99vh;
+
+}
+.inscriptionForm input, .inscriptionForm select{
+    margin: 2% auto;
+    text-align: center;
+    width: 20vw;
+    height: 5vh;
+}
+ <form class="" method="POST" action="#">
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="password" name="mdp" placeholder="Mot de passe" required>
+            <input type="submit" value="Connexion">
+            <a class="mdp_oublie" href="#">Mot de passe oublié?</a>
+</form>

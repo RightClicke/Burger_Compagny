@@ -1,4 +1,3 @@
-<input type="search" id="searchBar" style="color: black;"placeholder="Rechercher...">
 <section class="sect2">
         <div class="section2">
             <div class="gauche">
@@ -89,4 +88,5 @@
             </div>
         </div>
     </div>
+    </body>
    
