@@ -1,5 +1,4 @@
- 
- <?php
+<?php
     $host = 'localhost';
     $dbname = 'burgercompany';
     $user = 'root';
