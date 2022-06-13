@@ -489,8 +489,7 @@ footer {
 }
 
 /*Effet barre de recherche*/
-input{
-  display: none;
+/* input{
   outline: none;
   width: 50%;
   font-size: 2rem;
@@ -498,11 +497,11 @@ input{
   border-bottom: 2px solid pink;
   margin: auto;
   transform: translateY(-100%);
-  opacity: 0;
+  opacity: 1;
   transition: all 0.5s;
-}
+} */
 
-.sliderDown {
+/* .sliderDown {
   transform: translateY(0%);
   opacity: 1;
 }
@@ -515,7 +514,7 @@ input{
 
 #searchIcon:hover {
   color: #a73489;
-}
+} */
 #logo i:hover {
   color: #a73489;
 }
