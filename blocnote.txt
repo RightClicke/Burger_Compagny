@@ -499,3 +499,6 @@ git checkout nom de la branche
             <input type="submit" value="Connexion">
             <a class="mdp_oublie" href="#">Mot de passe oublié?</a>
 </form>
+
+<button class="pinka"type="button"><a href="index.php?page=connexion">Connexion</a></button>
+            <button type="button"><a href="index.php?page=inscription">Inscription</a></button>

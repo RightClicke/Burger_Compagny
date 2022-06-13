@@ -33,8 +33,8 @@
         </a>
         <div class="sign-btns">
             <!-- JE DOIS AJOUTER L'ICONE pour la barre de recherche<i id="searchIcon"class="fa-solid fa-magnifying-glass"></i> -->
-            <button class="pinka"type="button"><a href="index.php?page=connexion">Connexion</a></button>
-            <button type="button"><a href="index.php?page=inscription">Inscription</a></button>
+            
+            <button type="button"><a href="index.php?page=connexion">Connexion/Inscription</a></button>
         </div>
       </div>
       
