@@ -54,16 +54,10 @@ function inscription($bdd)
 
                     $query->execute();
                     echo ('ok');
-                    var_dump($nom);
-                    var_dump($prenom);
-                    var_dump($adresse);
-                    var_dump($email);
-                    var_dump($password);
-                    var_dump($numero);
+                
 
 
-
-                    // header('Location:index.php');
+                    
                 } else {
                     echo 'ville pas reconnue';
                 }
@@ -77,7 +71,7 @@ function inscription($bdd)
 }
 function connexion($bdd)
 {
-    if (isset($_POST['email'],$_POST['mdp'])) {
+    if (isset($_POST['email'], $_POST['mdp'])) {
         $email = strip_tags($_POST['email']);
         $mdp = $_POST['mdp'];
 
@@ -99,6 +93,7 @@ function connexion($bdd)
             if ($password == true) {
                 echo 'connecter';
                 $_SESSION['ID_role'] = $bdduser['ID_role'];
+                $_SESSION['prenom'] = $bdduser['prenom'];
                 $_SESSION['email'] = $email;
                 $_SESSION['mdp'] = $password;
 

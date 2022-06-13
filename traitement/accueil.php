@@ -4,7 +4,7 @@
                 <h1>Commander de la nourriture dans nos restaurants près de chez vous.</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero assumenda cupiditate impedit minus repellendus amet laboriosam quibusdam ea officia;</p>
                 <div class="gauche_button">
-                    <a href="#">Commander Maintenant <img src="../images/cart.png"></a>
+                    <a href="index.php?page=notreCarte">Commander Maintenant <img src="../images/cart.png"></a>
                     <a href="#">Apprendre Plus <img src="../images/next.png" alt=""></a>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="service"><img src="../images/check.png"> <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p></div>
             <div class="service"><img src="../images/check.png"> <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p></div>
             <div class="service"><img src="../images/check.png"> <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p></div>
-            <button><a href="#"> Savoir Plus <img src="../images/next_white.png"></a></button>
+            <button><a href=""> Savoir Plus <img src="../images/next_white.png"></a></button>
         </div>
         <div class="right">
             <img src="../images/img2.jpg" alt="">
@@ -70,21 +70,21 @@
                 <h4>French Salade Sandwish</h4>
                 <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
                 <span>€20</span>
-                <button><a href="#">Commander <img src="../images/cart.png"></a></button>
+                <button><a href="index.php?page=notreCarte">Commander <img src="../images/cart.png"></a></button>
             </div>
             <div class="box">
                 <img src="../images/hamburger-ge507374ef_1920.jpg">
                 <h4>Vegétarien Salade Sandwish</h4>
                 <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
                 <span>€30</span>
-                <button><a href="#">Commander <img src="../images/cart.png"></a></button>
+                <button><a href="index.php?page=notreCarte">Commander <img src="../images/cart.png"></a></button>
             </div>
             <div class="box">
                 <img src="../images/img3.jpg">
                 <h4>Japanese Salade Sandwish</h4>
                 <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
                 <span>€70</span>
-                <button><a href="#">Commander <img src="../images/cart.png"></a></button>
+                <button><a href="index.php?page=notreCarte">Commander <img src="../images/cart.png"></a></button>
             </div>
         </div>
     </div>

@@ -1,6 +1,5 @@
 <?php
-    include('../models/fonction.php');
-
+    inscription($bdd);
     connexion($bdd);
 ?>
 <main id="connexionF">
@@ -24,7 +23,7 @@
             </div>
             <div class="form-inner">
 
-               <form action="#" class="login">
+               <form action="" method="POST" class="login">
                   <div class="field">
                      <input type="text" placeholder="Email Address" required>
                   </div>
@@ -32,7 +31,7 @@
                      <input type="password" placeholder="Password" required>
                   </div>
                   <div class="pass-link">
-                     <a href="#">Forgot password?</a>
+                     <a href="#">Mot de passe oublié?</a>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
@@ -43,7 +42,8 @@
                   </div>
                </form>
 
-               <form action="#" class="signup">
+               
+               <form action="#" method="POST" class="signup">
                   <div class="field">
                   <input type="text" name="nom" placeholder="Nom" required>
                   </div>
@@ -60,7 +60,7 @@
                  <input type="float" name="numero" placeholder="Téléphone" required>
                  </div>
                  <div class="field">
-                    <input type="text" placeholder="Email" required>
+                    <input type="text" name="email" placeholder="Email" required>
                  </div>
                   <div class="field">
                   <input type="password" name="mdp" placeholder="Mot de passe" required>

@@ -1,0 +1,55 @@
+<section id="cars">
+        <h1 class="section_title">Nos vehicules</h1>
+        <div class="images">
+            <ul>
+                <li class="car">
+                   <div>
+                       <img src="images/car1.jpg" alt="">
+                   </div>
+                   <span>LAMBORGHINI</span>
+                   <span class="prix">300.000$</span>
+                   <a href="#">ACHETER MAINTENANT</a>
+                </li>
+                <li class="car">
+                    <div>
+                        <img src="images/car2.jpg" alt="">
+                    </div>
+                    <span>LAMBORGHINI</span>
+                    <span class="prix">300.000$</span>
+                    <a href="#">ACHETER MAINTENANT</a>
+                 </li>
+                 <li class="car">
+                    <div>
+                        <img src="images/car3.jpg" alt="">
+                    </div>
+                    <span>LAMBORGHINI</span>
+                    <span class="prix">300.000$</span>
+                    <a href="#">ACHETER MAINTENANT</a>
+                 </li>
+                 <li class="car">
+                    <div>
+                        <img src="images/car4.jpg" alt="">
+                    </div>
+                    <span>LAMBORGHINI</span>
+                    <span class="prix">300.000$</span>
+                    <a href="#">ACHETER MAINTENANT</a>
+                 </li>
+                 <li class="car">
+                    <div>
+                        <img src="images/car5.jpg" alt="">
+                    </div>
+                    <span>LAMBORGHINI</span>
+                    <span class="prix">300.000$</span>
+                    <a href="#">ACHETER MAINTENANT</a>
+                 </li>
+                 <li class="car">
+                    <div>
+                        <img src="images/car6.jpg" alt="">
+                    </div>
+                    <span>LAMBORGHINI</span>
+                    <span class="prix">300.000$</span>
+                    <a href="#">ACHETER MAINTENANT</a>
+                 </li>
+            </ul>
+        </div>
+    </section>

@@ -13,8 +13,7 @@ body{
 
 }
 /* Traitement nav barre Css */
-nav {
-  position: fixed;
+nav{
   width: 100%;
   display: flex;
   align-items: center;
@@ -518,17 +517,18 @@ footer {
 #logo i:hover {
   color: #a73489;
 }
-/* stylesheet de connexion*/
+/* stylesheet de connexion et inscription*/
 #connexionF{
-
- 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2%;
 }
 .gParent{
   display: flex;
   align-items: center;
   border: solid pink;
-  margin: 5% auto;
+  margin: 1% auto;
   
 }
 ::selection{
@@ -699,3 +699,136 @@ form .btn input[type="submit"]{
   font-weight: 500;
   cursor: pointer;
 }
+/* MenuCarte */
+#Gparento{
+  margin: 1% 0;
+}
+.box a{
+  text-decoration: none;
+}
+
+#titre h1{
+  font-family: Roboto Flex, sans-serif;
+  font-size: clamp(30px, 8vw, 60px);
+  text-align: center;
+  padding: calc(50px + 1vmin) 10px calc(80px + 1vmin);
+}
+span{
+  color: gold;
+}
+
+.documentation-container {
+  max-width: 900px;
+  margin: 0 21%;
+  display: flex; 
+  padding: 0 30px;
+  
+  
+}
+#navigation{
+  align-self: flex-start;
+  margin-right: calc(30px + 1vmin);
+  position: sticky;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(51,51,51,0.25);
+  border-radius: 8px;
+  width: 19%;
+}
+#navigation a {
+  display: block;
+  position: relative;
+  color: #8d8d8d;
+  text-decoration: none;
+  font-size: 20px;
+  padding: calc(10px + 1vmin)  calc(30px + 1vmin);
+  font-weight: 500;
+  overflow: hidden;
+}
+#navigation a:nth-child(1) {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+#navigation a:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+#navigation a.marked {
+  color: #333;
+  background: #eaeaea;
+}
+#navigation a.marked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  border-radius: 2px;
+  top: 0;
+  right: 0;
+  background: #06aa06;
+}
+.content-section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.documentation-content{
+  width: 80vh;
+}
+/*menu CSS*/
+
+.menu .bottom {
+margin: 60px 12%;
+display: flex;
+justify-content: space-between;
+
+}
+.menu .bottom .box {
+  text-align: center;
+  width: 30%;
+}
+.menu .bottom .box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.menu .bottom .box h4 {
+  font-size: 20px;
+  margin: 10px ;
+}
+.menu .bottom .box p {
+  margin: 5px 0;
+  font-size: 12px;
+  color: #999;
+}
+
+.menu .bottom .box span {
+  font-size: 25px;
+  color: #f46a06;
+}
+.menu .bottom .box button a img {
+  width: 20px;
+  height: 20px;
+  width:fit-content;
+}
+.menu .bottom .box button {
+  background-color: pink;
+  border: 0;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 5px ;
+  display: flex;
+}
+.menu .bottom .box button a {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin:  0 auto;
+}
+
+
+

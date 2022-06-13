@@ -1,3 +1,12 @@
+<?php
+session_start();
+include('../models/bdd.php');
+include('../models/fonction.php');
+$connecter = false; //initialisation en faux
+if (isset($_SESSION['ID_role'])) {
+    $connecter = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,10 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="../css/stylePr.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://kit.fontawesome.com/fec8a6cc73.js" crossorigin="anonymous"></script>
     <title>Burger Compagnie</title>
 </head>
 <nav>
-    <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page">
+    <a href="index.php" class="nav-icon" aria-label="visit homepage" aria-current="page">
         <h1>Burger<span>COMPAGNIE</span></h1>
     </a>
 
@@ -20,8 +30,8 @@
                 <span></span>
             </button>
             <div class="navlinks-container">
-                <a href="#" aria-current="page">Accueil</a>
-                <a href="../traitement/carteMenu.php">Notre carte</a>
+                <a href="index.php" aria-current="page">Accueil</a>
+                <a href="index.php?page=notreCarte">Notre carte</a>
                 <a href="#">A propos</a>
                 <a href="#">Contact</a>
             </div>
@@ -33,8 +43,23 @@
         </a>
         <div class="sign-btns">
             <!-- JE DOIS AJOUTER L'ICONE pour la barre de recherche<i id="searchIcon"class="fa-solid fa-magnifying-glass"></i> -->
-            
-            <button type="button"><a href="index.php?page=connexion">Connexion/Inscription</a></button>
+            <?php if ($connecter == false) { ?>
+                <svg width="26" height="20" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                </svg>
+                <button type="button"><a href="index.php?page=connexion">Connexion/Inscription</a></button>
+     
+            <?php
+            }
+            ?>
+        </div>
+        <div class="sign-btns">
+            <!-- JE DOIS AJOUTER L'ICONE pour la barre de recherche<i id="searchIcon"class="fa-solid fa-magnifying-glass"></i> -->
+            <?php if ($connecter == true) { ?>
+                <button type="button" style="background-color:red"><a href="../traitement/deco.php">deconnexion</a></button>
+            <?php
+            }
+            ?>
         </div>
       </div>
       
@@ -85,13 +110,13 @@
             include('../traitement/accueil.php');
             break;
         case 'connexion':
-            include('../traitement/connexion.php');
+            include('../traitement/connexionInscription.php');
             break;
         case "inscription":
             include('../traitement/inscription.php');
             break;
-        case "":
-            include('');
+        case "notreCarte":
+            include('../traitement/carteMenu.php');
             break;
         case "4":
             include('');
