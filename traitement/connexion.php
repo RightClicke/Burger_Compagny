@@ -4,6 +4,7 @@
     connexion($bdd);
 ?>
 <main id="connexionF">
+<div class="gParent">
 <div class="parent">
          <div class="title-text">
             <div class="title login">
@@ -22,6 +23,7 @@
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
+
                <form action="#" class="login">
                   <div class="field">
                      <input type="text" placeholder="Email Address" required>
@@ -37,31 +39,42 @@
                      <input type="submit" value="Connexion">
                   </div>
                   <div class="signup-link">
-                     Pas encore un membre? <a href="">Inscris toi maintenant</a>
+                     Pas encore un membre?<a href="">Inscris toi maintenant</a>
                   </div>
                </form>
+
                <form action="#" class="signup">
                   <div class="field">
-                     <input type="text" placeholder="Email Address" required>
+                  <input type="text" name="nom" placeholder="Nom" required>
                   </div>
                   <div class="field">
-                    <input type="text" placeholder="Email Address" required>
+                  <input type="text" name="prenom"  placeholder="Prenom" required> 
                  </div>
                  <div class="field">
-                    <input type="text" placeholder="Email Address" required>
+                 <input type="text" name="adresse" placeholder="Adresse" required>
+                 </div>
+                 <div class="field">
+                 <input type="text" name="ville" placeholder="Ville" required>
+                 </div>
+                 <div class="field">
+                 <input type="float" name="numero" placeholder="Téléphone" required>
+                 </div>
+                 <div class="field">
+                    <input type="text" placeholder="Email" required>
                  </div>
                   <div class="field">
-                     <input type="password" placeholder="Password" required>
+                  <input type="password" name="mdp" placeholder="Mot de passe" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Confirm password" required>
+                  <input type="password" name="mdp2" placeholder="Confirmation motdepasse" required>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Inscription">
+                     <input type="submit" value="S'inscrire">   
                   </div>
                </form>
             </div>
+         </div>
          </div>
       </div>
       <script>
