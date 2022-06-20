@@ -1,3 +1,7 @@
+<?php
+include('../../traitement/backoffice/function.php');
+include('../../models/bdd.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboard</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
@@ -81,61 +85,61 @@
                 </div>
             </div>
             <!-- ================ Order Details List ================= -->
- <?php 
-    
-        if (isset($_GET['page'])) {
+            <?php
 
-            $page = $_GET['page'];
-            switch ($page) {
-                case 'espacemembre':
-                    include('espaceMembre.php');
-                    break;
-                case 'produit':
-                    include('produit.php');
-                    break;
-                case "ingredients":
-                    include('ingredient.php');
-                    break;
-                case "notreCarte":
-                    include('../traitement/carteMenu.php');
-                    break;
-                case "4":
-                    include('');
-                    break;
-                case "5":
-                    include('');
-                    break;
-                case "6":
-                    include('');
-                    break;
-                case "7":
-                    include('');
-                    break;
-        
-                default:
-                    include('espaceMembre.php');
+            if (isset($_GET['page'])) {
+
+                $page = $_GET['page'];
+                switch ($page) {
+                    case 'espacemembre':
+                        include('../../vue/backoffice/espaceMembre.php');
+                        break;
+                    case 'produit':
+                        include('../../vue/backoffice/produit.php');
+                        break;
+                    case "ingredients":
+                        include('../../vue/backoffice/ingredient.php');
+                        break;
+                    case "notreCarte":
+                        include('../../vue/carteMenu.php');
+                        break;
+                    case "4":
+                        include('');
+                        break;
+                    case "5":
+                        include('');
+                        break;
+                    case "6":
+                        include('');
+                        break;
+                    case "7":
+                        include('');
+                        break;
+
+                    default:
+                        include('../../vue/backoffice/espaceMembre.php');
+                }
+            } else {
+                include('../../vue/backoffice/espaceMembre.php');
             }
-        } else {
-            include('espaceMembre.php');
-        }
-        
-    
-    
-    
-    
-    ?>
 
 
 
-            </div>
+
+
+            ?>
+
+
+
         </div>
-   
+    </div>
+
     </div>
     <!-- =========== Scripts =========  -->
     <script src="../../assets/js/main.js"></script>
-   <!-- ====== ionicons ======= -->
-   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 

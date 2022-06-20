@@ -161,3 +161,11 @@ function selectProduitById($bdd)
     $bddproduit = $userquery->fetch();
     return $bddproduit;
 }
+function obtentionDonee($bdd)
+{
+
+    $selectStr = 'SELECT * FROM produit';
+    $selectQuery = $bdd->query($selectStr);
+    $bddArray = $selectQuery->fetchAll();
+    return $bddArray;
+}

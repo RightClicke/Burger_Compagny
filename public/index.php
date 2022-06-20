@@ -2,10 +2,13 @@
 session_start();
 include('../models/fonction.php');
 include('../traitement/function.php');
-
+$admin = false;
 $connecter = false; //initialisation en faux
 if (isset($_SESSION['user']['ID_role'])) {
     $connecter = true;
+    if ($_SESSION['user']['ID_role'] == 2) {
+        $admin = true;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -58,6 +61,10 @@ if (isset($_SESSION['user']['ID_role'])) {
         </div>
         <div class="sign-btns">
             <!-- JE DOIS AJOUTER L'ICONE pour la barre de recherche<i id="searchIcon"class="fa-solid fa-magnifying-glass"></i> -->
+            <?php if ($admin == true) { ?>
+                <button type="button" style="background-color:red"><a href="../public/backoffice/index.php">dashbord</a></button>
+            <?php } ?>
+
             <?php if ($connecter == true) { ?>
                 <button type="button" style="background-color:red"><a href="../traitement/deco.php">deconnexion</a></button>
             <?php

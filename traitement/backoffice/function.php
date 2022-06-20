@@ -1,5 +1,5 @@
 <?php
-include('../models/bdd.php');
+
 
 function ajout_image($bdd)
 {
