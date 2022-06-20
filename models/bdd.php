@@ -1,5 +1,4 @@
- 
- <?php
+<?php
     $host = 'localhost';
     $dbname = 'burgercompany';
     $user = 'root';
@@ -11,4 +10,3 @@
         echo 'erreur:' . $fail->getMessage();
         die();
     }
-    ?>
