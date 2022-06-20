@@ -1,19 +1,15 @@
 <?php
-
-
 inscription($bdd);
 ?>
-<main id="inscriptionF">
-    <form method="POST" action="#" class="inscriptionForm">
-        <input type="text" name="nom" placeholder="Nom" required>
-        <input type="text" name="prenom" placeholder="Prenom" required>
-        <input type="text" name="adresse" placeholder="Adresse" required>
-        <input type="text" name="ville" placeholder="Ville" required>
-        <input type="float" name="numero" placeholder="Téléphone" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="mdp" placeholder="Mot de passe" required>
-        <input type="password" name="mdp2" placeholder="Confirmation motdepasse" required>
-        <input type="submit" value="S'inscrire">
-    </form>
-</main>
-</body>
+
+<form method="POST" action="">
+    <input type="text" name="nom" class="marque1" placeholder="nom" required />
+    <input type="text" name="prenom" class="marque1" placeholder="prenom" required />
+    <input type="text" name="adresse" class="marque1" placeholder="adresse" required />
+    <input type="email" name="email" class="marque1" placeholder="email" required />
+    <input type="number" name="numero" class="marque1" placeholder="numero" required />
+    <input type="password" name="mdp" class="marque1" placeholder="mots de passe" required />
+    <input type="password" name="mdp2" class="marque1" placeholder="mots de passe" required />
+    <input type="text" name="ville" class="marque1" placeholder="ville" required />
+    <input type="submit" name="envoyer" id="envoyer">
+</form>
