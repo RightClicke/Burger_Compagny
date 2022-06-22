@@ -27,13 +27,11 @@ function inscription($bdd)
 
         if ($ok == false) {
 
-            $id_ville = getVilleByName($bdd, $ville);
+            $ville_id = getVilleByName($bdd, $ville);
 
             if (isset($ville_id)) {
                 setNewUser($bdd, $password, $nom, $prenom, $email, $numero, $adresse, $ville_id);
                 echo ('ok');
-
-                // header('Location:index.php');
             } else {
                 echo 'ville pas reconnue';
             }
@@ -63,7 +61,7 @@ function connexion($bdd)
                 $_SESSION['user']['ID_role'] = $bdduser['ID_role'];
                 $_SESSION['user']['email'] = $email;
                 $_SESSION['user']['mdp'] = $password;
-                return $_SESSION['user'];
+                header('Location:../public/index.php');
             } else {
                 echo 'mots de passe faux';
             }

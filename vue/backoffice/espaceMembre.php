@@ -17,9 +17,6 @@
 
             <tbody>
                 <?php
-
-                include('../../models/fonction.php');
-
                 $bddArray = obtentionDonee($bdd);
 
                 if ($bddArray != null) {

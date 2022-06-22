@@ -23,7 +23,7 @@
 
 
             <?php
-            var_dump($_SESSION);
+
             if (creationPanier()) {
                 $nbArticles = count($_SESSION['panier']['nomproduit']);
                 if ($nbArticles <= 0)
@@ -44,12 +44,13 @@
                     echo "</td></tr>";
 
                     echo "<tr><td colspan=\"4\">";
-                    echo "<input type=\"submit\" value=\"Rafraichir\"/>";
-                    echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
+
 
                     echo "</td></tr>";
                 }
             }
+
+
 
             ?>
         </table>

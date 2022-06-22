@@ -1,5 +1,5 @@
 <?php
-
+include('../../models/fonction.php');
 
 function ajout_image($bdd)
 {
@@ -9,7 +9,7 @@ function ajout_image($bdd)
         if ($_POST['validation']) {
             $nom = $_POST['nom'];
             //création de la variable du dossier ou l'image sera enregistré
-            $uploads_dir = '../public\assets\images';
+            $uploads_dir = '../../public/assets/images';
 
 
             //Récupération du nom de l'image
@@ -42,11 +42,10 @@ function ajout_image($bdd)
 function ajout_ingredient($bdd)
 {
     if (isset($_POST['nom'])) {
-
-        $bdding = selectIngredientByname($bdd);
+        $nom = strip_tags($_POST['nom']);
+        $bdding = selectIngredientByname($bdd, $nom);
         if ($bdding == false) {
             ajout_image($bdd);
-            $nom = strip_tags($_POST['nom']);
             $bddimg = selectImgByName($bdd, $nom);
             $ID_img = $bddimg['ID_image'];
             $nom = $_POST['nom'];
@@ -135,7 +134,39 @@ function table_cat($bdd)
     }
 
     echo '</select>';
+}
 
+
+function ajout_ingredientProduit($bdd)
+{
+
+    $bddingredient = selectallIngredient($bdd);
+    $bddproduit = selectallproduit($bdd);
+    if (isset($_POST['prod'])) {
+        $ID_produit = $_POST['prod'];
+        $ID_ingredient = $_POST['ing'];
+        insertIngredientProduit($bdd, $ID_produit, $ID_ingredient);
+    }
+    echo '<form action="" method="Post">';
+
+    echo "<select class='prod' name='prod'>";
+    echo '<option value="">' . "choisir un produit" . '</option>';
+    foreach ($bddproduit as $resultat) {
+
+        echo '<option value=' . $resultat['ID_produit'] . '>' . $resultat['nom'] . '</option>';
+    }
 
     echo '</select>';
+    echo "<select class='ing' name='ing'>";
+    echo '<option value="">' . "choisir un ingredient" . '</option>';
+    foreach ($bddingredient as $resultat) {
+
+        echo '<option value=' . $resultat['ID_ingredient'] . '>' . $resultat['nom'] . '</option>';
+    }
+
+    echo '</select>';
+
+
+    echo '<input type="submit">';
+    echo '</form>';
 }

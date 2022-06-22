@@ -1,6 +1,7 @@
 <?php
 include('../models/bdd.php');
 include('../models/fonction.php');
+include('function.php');
 session_start();
 $bddproduit = selectProduitById($bdd);
 
@@ -10,7 +11,7 @@ $qteproduit = 1;
 $ID_produit = $bddproduit['ID_produit'];
 
 ajouterArticle($nomproduit, $qteproduit, $prix, $ID_produit);
-header('Location:../vue/carteMenu.php');
+header('Location:../vue/articleAjouter.php');
 ?>
 
 

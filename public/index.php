@@ -62,11 +62,11 @@ if (isset($_SESSION['user']['ID_role'])) {
         <div class="sign-btns">
             <!-- JE DOIS AJOUTER L'ICONE pour la barre de recherche<i id="searchIcon"class="fa-solid fa-magnifying-glass"></i> -->
             <?php if ($admin == true) { ?>
-                <button type="button" style="background-color:red"><a href="../public/backoffice/index.php">dashbord</a></button>
+                <button type="button" style="background-color:gold"><a href="../public/backoffice/index.php">Mon espace</a></button>
             <?php } ?>
 
             <?php if ($connecter == true) { ?>
-                <button type="button" style="background-color:red"><a href="../traitement/deco.php">deconnexion</a></button>
+                <button type="button" style="background-color:pink"><a href="../traitement/deco.php">deconnexion</a></button>
             <?php
             }
             ?>
@@ -131,7 +131,7 @@ if (isset($_SESSION['user']['ID_role'])) {
                 include('../vue/carteMenu.php');
                 break;
             case "4":
-                include('../traitement/lepanier.php');
+                include('../vue/lepanier.php');
                 break;
             case "5":
                 include('../vue/backoffice/ajout_ingredient.php');

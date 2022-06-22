@@ -56,13 +56,25 @@ include('../../models/bdd.php');
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="index.php?page=ingredients">
+                        <span class="icon">
+                            <ion-icon name="download"></ion-icon>
+                        </span>
+                        <span class="title">Categorie </span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="../../traitement/deco.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
                         <span class="title">Deconnexion</span>
                     </a>
                 </li>
+
+
             </ul>
         </div>
 
@@ -81,7 +93,7 @@ include('../../models/bdd.php');
                 </div>
 
                 <div class="user">
-                    <img src="../assets/imgs/72-729670_png-file-svg-single-user-icon-png.png" alt="">
+                    <img src="../../assets/images/72-729670_png-file-svg-single-user-icon-png.png" alt="">
                 </div>
             </div>
             <!-- ================ Order Details List ================= -->
@@ -98,13 +110,13 @@ include('../../models/bdd.php');
                         include('../../vue/backoffice/produit.php');
                         break;
                     case "ingredients":
-                        include('../../vue/backoffice/ingredient.php');
+                        include('../../vue/backoffice/ajout_ingredient.php');
                         break;
                     case "notreCarte":
                         include('../../vue/carteMenu.php');
                         break;
                     case "4":
-                        include('');
+                        include('../../vue/backoffice/ajout_ingredientProduit');
                         break;
                     case "5":
                         include('');
@@ -136,7 +148,7 @@ include('../../models/bdd.php');
 
     </div>
     <!-- =========== Scripts =========  -->
-    <script src="../../assets/js/main.js"></script>
+    <script src="../../public/assets/js/main.js"></script>
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

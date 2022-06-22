@@ -1,0 +1,2 @@
+<?php
+ajout_ingredientProduit($bdd);

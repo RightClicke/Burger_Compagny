@@ -68,13 +68,21 @@ function insertImg($bdd, $nom, $lien)
     $query->bindValue(':lien', $lien, PDO::PARAM_STR);
     $query->execute();
 }
-function selectIngredientByname($bdd)
+function selectIngredientByname($bdd, $nom)
 {
     $ingstr = 'SELECT * FROM ingredient WHERE nom=:nom';
     $ingquery = $bdd->prepare($ingstr);
-    $ingquery->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
+    $ingquery->bindValue(':nom', $nom, PDO::PARAM_STR);
     $ingquery->execute();
     $bdding = $ingquery->fetch();
+    return  $bdding;
+}
+function selectallIngredient($bdd)
+{
+    $ingstr = 'SELECT * FROM ingredient ';
+    $ingquery = $bdd->prepare($ingstr);
+    $ingquery->execute();
+    $bdding = $ingquery->fetchall();
     return  $bdding;
 }
 function selectImgByName($bdd, $nom)
@@ -134,10 +142,18 @@ function selectProduitByName($bdd, $nom)
 {
     $catstr = 'SELECT * FROM produit WHERE nom=:nom';
     $catquery = $bdd->prepare($catstr);
-    $catquery->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
+    $catquery->bindValue(':nom', $nom, PDO::PARAM_STR);
     $catquery->execute();
     $bddprod = $catquery->fetch();
     return $bddprod;
+}
+function selectallProduit($bdd)
+{
+    $catstr = 'SELECT * FROM produit ';
+    $catquery = $bdd->prepare($catstr);
+    $catquery->execute();
+    $bddproduit = $catquery->fetchall();
+    return $bddproduit;
 }
 function insertProduit($bdd, $cat, $ID_img, $nom, $descrip, $prix, $dispo)
 {
@@ -168,4 +184,14 @@ function obtentionDonee($bdd)
     $selectQuery = $bdd->query($selectStr);
     $bddArray = $selectQuery->fetchAll();
     return $bddArray;
+}
+
+function insertIngredientProduit($bdd, $ID_produit, $ID_ingredient)
+{
+    $queryprep = 'INSERT INTO ingredient_produit (ID_ingredient_produit,ID_produit,ID_ingredient) VALUES 
+    (null,:ID_prod,:ID_ing)';
+    $query = $bdd->prepare($queryprep);
+    $query->bindValue(':ID_prod', $ID_produit, PDO::PARAM_STR);
+    $query->bindValue(':ID_ing', $ID_ingredient, PDO::PARAM_STR);
+    $query->execute();
 }

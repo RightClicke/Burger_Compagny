@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/menuCarteStyle.css">
-  <title>Notre carte</title>
-</head>
-
-<body>
-
-  <h1>Burger<span>COMPAGNIE</span></h1>
-
+<main id="Gparento">
   <div class="documentation-container">
     <!-- Grand parent-->
-    <nav>
+    <nav id="navigation">
       <a href="#menus">Nos menus</a>
       <a href="#burgers">Nos Burgers</a>
       <a href="#salades">Nos Salades</a>
@@ -32,22 +18,22 @@
         <div class="menu">
           <div class="bottom">
             <div class="box">
-              <img src="../public/assets/images/burger-g41ca5520a_1920.jpg">
-              <h4>French Salade Sandwish</h4>
+              <img src="../public/assets/images/1934_sub_image_4_20220215151431.jpg">
+              <h4>Roi des pirates Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
               <span>€20</span>
-              <button><a href="traitement/panier.php?">Commander <img src="../public/assets/images/cart.png"></a></button>
+              <button><a href="../traitement/panier.php?produit=16">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/hamburger-ge507374ef_1920.jpg">
-              <h4>Vegétarien Salade Sandwish</h4>
+              <img src="../public/assets/images/istockphoto-520134277-612x612.jpg">
+              <h4>Super saiyen Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
               <span>€30</span>
-              <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
+              <button><a href="../traitement/panier.php?produit=17">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/img3.jpg">
-              <h4>Japanese Salade Sandwish</h4>
+              <img src="../public/assets/images/333333333.jpg">
+              <h4>Attaque des titants Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
               <span>€70</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
@@ -58,24 +44,24 @@
         <div class="menu">
           <div class="bottom">
             <div class="box">
-              <img src="../public/assets/images/burger-g41ca5520a_1920.jpg">
+              <img src="../public/assets/images/1934_sub_image_4_20220215151431.jpg">
               <h4>French Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$20</span>
+              <span>€20</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/hamburger-ge507374ef_1920.jpg">
+              <img src="../public/assets/images/333333333.jpg">
               <h4>Vegétarien Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$30</span>
+              <span>€30</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/img3.jpg">
+              <img src="../public/assets/images/istockphoto-520134277-612x612.jpg">
               <h4>Japanese Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$70</span>
+              <span>€70</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
           </div>
@@ -84,24 +70,24 @@
         <div class="menu">
           <div class="bottom">
             <div class="box">
-              <img src="../public/assets/images/burger-g41ca5520a_1920.jpg">
+              <img src="../public/assets/images/istockphoto-520134277-612x612.jpg">
               <h4>French Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$20</span>
+              <span>€20</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/hamburger-ge507374ef_1920.jpg">
+              <img src="../public/assets/images/333333333.jpg">
               <h4>Vegétarien Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$30</span>
+              <span>€30</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/img3.jpg">
+              <img src="../public/assets/images/hamburger-hot-dog-et-pommes-frites-262615.jpg">
               <h4>Japanese Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$70</span>
+              <span>€70</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
           </div>
@@ -110,24 +96,24 @@
         <div class="menu">
           <div class="bottom">
             <div class="box">
-              <img src="../public/assets/images/burger-g41ca5520a_1920.jpg">
+              <img src="../public/assets/images/hamburger-hot-dog-et-pommes-frites-262615.jpg">
               <h4>French Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$20</span>
+              <span>€20</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/hamburger-ge507374ef_1920.jpg">
+              <img src="../public/assets/images/333333333.jpg">
               <h4>Vegétarien Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$30</span>
+              <span>€30</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/img3.jpg">
+              <img src="../public/assets/images/t-mcdonalds-Quarter-Pounder-with-Cheese.jpg">
               <h4>Japanese Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$70</span>
+              <span>€70</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
           </div>
@@ -136,24 +122,24 @@
         <div class="menu">
           <div class="bottom">
             <div class="box">
-              <img src="../public/assets/images/burger-g41ca5520a_1920.jpg">
+              <img src="../public/assets/images/333333333.jpg">
               <h4>French Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$20</span>
+              <span>€20</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/hamburger-ge507374ef_1920.jpg">
+              <img src="../public/assets/images/istockphoto-520134277-612x612.jpg">
               <h4>Vegétarien Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$30</span>
+              <span>€30</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
             <div class="box">
-              <img src="../public/assets/images/img3.jpg">
+              <img src="../public/assets/images/1934_sub_image_4_20220215151431.jpg">
               <h4>Japanese Salade Sandwish</h4>
               <p>Temps:10 - 15 Minutes | Livraison gratuite</p>
-              <span>$70</span>
+              <span>€70</span>
               <button><a href="#">Commander <img src="../public/assets/images/cart.png"></a></button>
             </div>
           </div>
@@ -265,7 +251,7 @@
 
   <script>
     const sections = [...document.querySelectorAll(".content-section")]
-    const navLinks = [...document.querySelectorAll("nav a")]
+    const navLinks = [...document.querySelectorAll("#navigation a")]
     const documentationContainer = document.querySelector(".documentation-content")
 
     window.addEventListener("load", () => {
@@ -347,7 +333,6 @@
       }
     })
   </script>
-
-</body>
+</main>
 
 </html>
