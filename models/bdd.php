@@ -10,4 +10,3 @@
         echo 'erreur:' . $fail->getMessage();
         die();
     }
-    ?>
